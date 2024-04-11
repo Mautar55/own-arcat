@@ -1,0 +1,6 @@
+.DS_Store
+.atom-live-server.json
+node_modules/*
+dist/*
+aframe/build/*.txt
+three.js/build/*.txt

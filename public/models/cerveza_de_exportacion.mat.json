@@ -1,0 +1,14 @@
+{
+    "material_overrides": [
+        {
+            "type" : "arcatglass"
+        },
+        {
+            "type" : "arcatliquidmatcap",
+            "values": {
+                "color": "rgb(255, 153, 0)"
+            }
+        },
+        null
+    ]
+}

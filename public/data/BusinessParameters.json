@@ -1,0 +1,53 @@
+{
+  "marker_type": "pattern",
+  "barcodeValue": 5,
+
+  "detectionMode": "mono_and_matrix",
+  "matrixCodeType": "4x4_BCH_13_5_5",
+  "labelingMode": "black_region",
+
+  "highlightColor": "rgb(235, 184, 17)",
+  "products": [
+    {
+      "label": "Cerveza de exportación",
+      "description": "Cerveza artesanal de exportación. Solo se distribuye en bares y la mayoría se va del país.",
+      "model_url": "models/cerveza_de_exportacion.glb",
+      "thumbnailImage": "models/imagen_para_cerveza.png"
+    },
+
+    {
+      "label": "Vaso de Pepsi",
+      "description": "La clásica Pepsi. Quienes dejan de tomarla lo hacen porque dejan el azúcar o las gaseosas.",
+      "model_url": "models/vaso_coca.glb",
+      "thumbnailImage": "models/imagen_pepsi_vintage.png"
+    },
+
+    {
+      "label": "Pinta de Jägermeister",
+      "description": "Licor verde con 35% de alcohol preparado con 56 hierbas. Consistencia similar a la bebida verde de Scotty en Star Trek.",
+      "model_url": "models/vaso_verde.glb",
+      "thumbnailImage": "models/imagen_licor_verde.png"
+    },
+
+    {
+      "label": "Cold Brew",
+      "description": "Café servido con hielo. Apto para adictos al café que desconocen el gusto al calor.",
+      "model_url": "models/vaso_verde.glb",
+      "thumbnailImage": "models/cold_brew.png"
+    },
+
+    {
+      "label": "Cerveza Romulana",
+      "description": "Cerveza de contrabando proveniente del Imperio Romulano. ¿Quien diría que una cultura tan fría puede hacer un alcohol tan sabroso?",
+      "model_url": "models/vaso_verde.glb",
+      "thumbnailImage": "models/romulan_ale.png"
+    },
+
+    {
+      "label": "Café de la casa",
+      "description": "Café clásico y creomoso con un dibujo. Especial para calentar el cuerpo y el alma :)",
+      "model_url": "models/vaso_verde.glb",
+      "thumbnailImage": "models/cafe_dibujado.png"
+    }
+  ]
+}

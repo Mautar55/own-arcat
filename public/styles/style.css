@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "HighlightFont";
+  src: url("JosefinSans-VariableFont_wght.ttf");
+  font-weight: 350;
+}
+
+@font-face {
+  font-family: "CommonFont";
+  src: url("OpenSans-VariableFont_wdth,wght.ttf");
+  font-weight: 318;
+  font-stretch: 100;
+}
+
+.horizontal-snap {
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  height: calc(135px + 0rem);
+  padding: 1rem;
+  max-width: none;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-margin-block: 2000px;
+}
+
+.horizontal-snap > a {
+  scroll-snap-align: center;
+  border-radius: 1rem;
+}
+
+.horizontal-snap > a:hover {
+  outline: 5px solid rgb(235, 184, 17);
+  outline-offset: -5px;
+}
+
+.horizontal-snap img {
+  width: 135px;
+  height: 135px;
+  max-width: none;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.product_name {
+  font-family: HighlightFont;
+  font-size: 33px;
+  text-align: center;
+  color: #fff;
+  margin: 10px;
+  width: 100%-10px;
+}
+
+.product_description {
+  font-family: CommonFOnt;
+  font-size: 16px;
+  text-align: justify;
+  color: #fff;
+  margin: 10px;
+  width: 100%-10px;
+  margin-bottom: 15px;
+}
