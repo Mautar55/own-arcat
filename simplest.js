@@ -40,7 +40,7 @@ const rgbe_loader = new RGBELoader();
 
 THREE.Cache.enabled = true;
 
-const some_response = await fetch("data/BusinessParameters.json");
+const some_response = await fetch("/data/BusinessParameters.json");
 const BusinessParameters = await some_response.json();
 
 // init renderer
@@ -89,7 +89,7 @@ scene.add(camera);
 /// Loading HDRI
 /////////////////////////////////////////////////////////////////////////////////
 
-rgbe_loader.load("models/this_ambient.hdr", (texture_env) => {
+rgbe_loader.load("/models/this_ambient.hdr", (texture_env) => {
   texture_env.mapping = THREE.EquirectangularReflectionMapping;
   scene.environment = texture_env;
 });
@@ -203,7 +203,7 @@ function onResize() {
 function initARContext() {
   // create atToolkitContext
   arToolkitContext = new ArToolkitContext({
-    cameraParametersUrl: ArToolkitContext.baseURL + "../data/camera_para.dat",
+    cameraParametersUrl: ArToolkitContext.baseURL + "/data/camera_para.dat",
     detectionMode: BusinessParameters.detectionMode,
     matrixCodeType: BusinessParameters.matrixCodeType,
     labelingMode: BusinessParameters.labelingMode,
@@ -227,7 +227,7 @@ function initARContext() {
   // MARKER
   arMarkerControls = new ArMarkerControls(arToolkitContext, camera, {
     type: BusinessParameters.marker_type,
-    patternUrl: "data/pattern-marker.patt",
+    patternUrl: "/data/pattern-marker.patt",
     barcodeValue: BusinessParameters.barcodeValue,
     patternRatio: 0.5,
     // patternUrl : ArToolkitContext.baseURL + '../data/data/patt.kanji',

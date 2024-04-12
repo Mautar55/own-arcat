@@ -14,7 +14,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
-                noar: resolve(__dirname, 'noar/index.html'),
+                noar: resolve(__dirname, 'index.html'),
             },
         },
     },

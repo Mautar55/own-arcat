@@ -1,0 +1,11 @@
+{
+    "material_overrides": [
+        {
+            "type" : "arcatglass",
+            "values": {
+                "color": "rgb(255, 255, 255)"
+            }
+        },
+        null
+    ]
+}

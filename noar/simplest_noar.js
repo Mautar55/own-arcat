@@ -6,6 +6,8 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 
 import { ResLoader /*, ArcatMaterial*/ } from "../ArcatResources";
 
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
 const loader = new GLTFLoader();
 const DRACOLoaderloader = new DRACOLoader();
 DRACOLoaderloader.setDecoderPath("three/examples/jsm/libs/draco/");
@@ -59,8 +61,19 @@ var arcat_loader = new ResLoader(scene);
 // Create a camera
 var camera = new THREE.PerspectiveCamera( 50, window.screen.width / window.screen.height, 0.1, 50);
 scene.add(camera);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.1;
+controls.target = new THREE.Vector3(0,1,0);
+
 camera.position.set(3.5,3.5,3.5);
 camera.lookAt(0,1,0);
+controls.update();
+
+onRenderFcts.push(() => {
+  controls.update();
+});
 
 /////////////////////////////////////////////////////////////////////////////////
 /// Loading HDRI
@@ -70,6 +83,8 @@ rgbe_loader.load("/models/this_ambient.hdr", (texture_env) => {
   texture_env.mapping = THREE.EquirectangularReflectionMapping;
   scene.environment = texture_env;
   scene.background = texture_env;
+  scene.backgroundBlurriness = 0.75;
+  scene.backgroundIntensity = 0.15;
 });
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -130,7 +145,7 @@ function onResize() {
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
 
-let plane_geometry = new THREE.PlaneGeometry(1, 1);
+let plane_geometry = new THREE.CircleGeometry( 0.75, 5 ); 
 let plane_material = new THREE.MeshBasicMaterial({
   transparent: true,
   opacity: 0.5,
@@ -138,7 +153,7 @@ let plane_material = new THREE.MeshBasicMaterial({
   color: "rgb(0,0,0)"
 });
 let plane_mesh = new THREE.Mesh(plane_geometry, plane_material);
-plane_mesh.position.y = 0.0;
+plane_mesh.position.y = -0.05;
 plane_mesh.rotation.x = Math.PI * 0.5;
 scene.add(plane_mesh);
 

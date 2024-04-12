@@ -67,6 +67,7 @@ export class ArcatMaterial {
     const custom_constructors = {
       arcatglass: this.FromGlass,
       arcatliquidmatcap: this.FromLiquidMatcap,
+      brownice: this.FromBrownIce
     };
 
     const MaterialClass = material_constructors[type.toLowerCase()];
@@ -84,11 +85,29 @@ export class ArcatMaterial {
         new_material.setValues(parameters);
       } else {
         console.error("Nor THREE or Arcat Material type recognized: ", type);
-        new_material = new THREE.MeshBasicMaterial();
+        new_material = new THREE.MeshNormalMaterial();
       }
     }
 
     return new_material;
+  }
+
+  static FromBrownIce() {
+    let tex_matcap = texture_loader.load(
+      "/models/matcap_gradiente_ice.png"
+    );
+    let tex_ice = texture_loader.load(
+      "/models/extended/ice_baked.png"
+    );
+    tex_matcap.colorSpace = THREE.SRGBColorSpace;
+    tex_ice.colorSpace = THREE.SRGBColorSpace;
+    tex_ice.flipY = false;
+
+    return new THREE.MeshMatcapMaterial({
+      map: tex_ice,
+      matcap: tex_matcap,
+      
+    });
   }
 
   // Crea un material de matcap con la textura de liquidos
@@ -120,33 +139,6 @@ export class ArcatMaterial {
 
   // Crea un material de vidrio para los vasos
   static FromGlass() {
-    // esto lo tengo asi comentado para probar la otra funcion
-    /*return this.Parse("MeshPhysicalMaterial", {
-      "color": 16777215,
-      "roughness": 0,
-      "metalness": 0,
-      "sheen": 0,
-      "sheenColor": 0,
-      "sheenRoughness": 1,
-      "emissive": 0,
-      "specularIntensity": 1,
-      "specularColor": 16777215,
-      "clearcoat": 0,
-      "clearcoatRoughness": 0,
-      "iridescence": 0,
-      "iridescenceIOR": 1.3,
-      "iridescenceThicknessRange": [100,400],
-      "anisotropy": 0,
-      "anisotropyRotation": 0,
-      "reflectivity": 1,
-      "transmission": 1,
-      "thickness": 0,
-      "attenuationColor": 16777215,
-      "vertexColors": true,
-      "transparent": true,
-      "blendColor": 0,
-      "depthWrite": false
-    })*/
 
     return new THREE.MeshPhysicalMaterial({
       color: "rgb(255, 255, 255)",
@@ -169,10 +161,12 @@ export class ArcatMaterial {
       transmission: 1,
       thickness: 0,
       attenuationColor: 16777215,
-      vertexColors: true,
+      vertexColors: false,
       transparent: true,
       blendColor: 0,
-      depthWrite: false,
+      side: THREE.FrontSide,
+      depthTest: true,
+      depthWrite: true
     });
   }
 
@@ -184,8 +178,11 @@ export class ArcatMaterial {
     scene.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         if (material_array[current_slot]) {
+          child.material.setValues(undefined);
           child.material = material_array[current_slot];
+          child.material.needsUpdate = true;
         }
+        
         current_slot++;
       }
     });

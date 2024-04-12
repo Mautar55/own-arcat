@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"No test found\"",
     "ready": "http-serve",
-    "init": "npx vite --port 8080 --host",
+    "init": "npx vite --port 80 --host",
+    "init-linux": "npx vite --port 5525 --host",
     "export": "npx vite build && npx vite preview"
   },
   "keywords": [],

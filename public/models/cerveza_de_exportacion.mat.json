@@ -6,7 +6,8 @@
         {
             "type" : "arcatliquidmatcap",
             "values": {
-                "color": "rgb(255, 153, 0)"
+                "color": "rgb(200, 95, 0)",
+                "roughness": 0.85
             }
         },
         null

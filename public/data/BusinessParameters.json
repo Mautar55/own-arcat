@@ -9,6 +9,13 @@
   "highlightColor": "rgb(235, 184, 17)",
   "products": [
     {
+      "label": "Cold Brew",
+      "description": "Café servido con hielo. Apto para adictos al café que desconocen el gusto al calor.",
+      "model_url": "/models/extended/cold_brew_completo.glb",
+      "thumbnailImage": "/models/cold_brew.png"
+    },
+
+    {
       "label": "Cerveza de exportación",
       "description": "Cerveza artesanal de exportación. Solo se distribuye en bares y la mayoría se va del país.",
       "model_url": "/models/cerveza_de_exportacion.glb",
@@ -24,30 +31,23 @@
 
     {
       "label": "Pinta de Jägermeister",
-      "description": "Licor verde con 35% de alcohol preparado con 56 hierbas. Consistencia similar a la bebida verde de Scotty en Star Trek.",
+      "description": "Licor verde con 35% de alcohol preparado con 56 hierbas.",
       "model_url": "/models/vaso_verde.glb",
       "thumbnailImage": "/models/imagen_licor_verde.png"
     },
 
     {
-      "label": "Cold Brew",
-      "description": "Café servido con hielo. Apto para adictos al café que desconocen el gusto al calor.",
-      "model_url": "/models/vaso_verde.glb",
-      "thumbnailImage": "/models/cold_brew.png"
+      "label": "Smoothie de banana y frutos rojos",
+      "description": "Exquisito batido de fruta.",
+      "model_url": "/models/extended/batido_frutal_completo.glb",
+      "thumbnailImage": "/models/imagen_batido.png"
     },
 
     {
-      "label": "Cerveza Romulana",
-      "description": "Cerveza de contrabando proveniente del Imperio Romulano. ¿Quien diría que una cultura tan fría puede hacer un alcohol tan sabroso?",
-      "model_url": "/models/vaso_verde.glb",
-      "thumbnailImage": "/models/romulan_ale.png"
-    },
-
-    {
-      "label": "Café de la casa",
-      "description": "Café clásico y creomoso con un dibujo. Especial para calentar el cuerpo y el alma :)",
-      "model_url": "/models/vaso_verde.glb",
-      "thumbnailImage": "/models/cafe_dibujado.png"
+      "label": "Iced Latte",
+      "description": "Un espresso con leche lateada al punto crema, hielo.",
+      "model_url": "/models/extended/cold_lact_completo.glb",
+      "thumbnailImage": "/models/iced_lathe_imagen.png"
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+    "material_overrides": [
+        {
+            "type" : "arcatglass",
+            "values": {
+                "color": "rgb(255, 255, 255)"
+            }
+        },
+        {
+            "type" : "arcatliquidmatcap",
+            "values": {
+                "color": "rgb(91, 45, 0)",
+                "roughness": 0.75,
+
+                "side": "THREE.BackSide",
+                "metalness": 1,
+                "envMapIntensity": 1
+            }
+        },
+        {
+            "type" : "brownice"
+        }
+    ]
+}
