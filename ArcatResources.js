@@ -94,14 +94,14 @@ export class ArcatMaterial {
   // Crea un material de matcap con la textura de liquidos
   static FromLiquidMatcap() {
     let tex_matcap = texture_loader.load(
-      "models/matcap_liquid_50p.png"
+      "/models/matcap_liquid_50p.png"
     );
     tex_matcap.colorSpace = THREE.SRGBColorSpace;
     /*return new THREE.MeshMatcapMaterial({
       matcap: tex_matcap,
     });*/
 
-    let refractive_env = rgbe_loader.load("models/refraction_ambient.hdr", (texture_env) => {
+    let refractive_env = rgbe_loader.load("/models/refraction_ambient.hdr", (texture_env) => {
       texture_env.mapping = THREE.EquirectangularReflectionMapping; // no hay diff con reflection pero qsy
       //texture_env.colorSpace = THREE.SRGBColorSpace;
     });
@@ -310,7 +310,7 @@ export class ResLoader {
     if (!this.loadingBar) {
       const geometry = new THREE.IcosahedronGeometry( 0.5, 2 ); ;
       const tex_matcap = texture_loader.load(
-        "models/matcap_marron.png"
+        "/models/matcap_marron.png"
       );
       tex_matcap.colorSpace = THREE.SRGBColorSpace;
       const material = new THREE.MeshMatcapMaterial({
