@@ -23,20 +23,6 @@
     },
 
     {
-      "label": "Vaso de Pepsi",
-      "description": "La clásica Pepsi. Quienes dejan de tomarla lo hacen porque dejan el azúcar o las gaseosas.",
-      "model_url": "/models/vaso_coca.glb",
-      "thumbnailImage": "/models/imagen_pepsi_vintage.png"
-    },
-
-    {
-      "label": "Pinta de Jägermeister",
-      "description": "Licor verde con 35% de alcohol preparado con 56 hierbas.",
-      "model_url": "/models/vaso_verde.glb",
-      "thumbnailImage": "/models/imagen_licor_verde.png"
-    },
-
-    {
       "label": "Smoothie de banana y frutos rojos",
       "description": "Exquisito batido de fruta.",
       "model_url": "/models/extended/batido_frutal_completo.glb",
@@ -48,6 +34,20 @@
       "description": "Un espresso con leche lateada al punto crema, hielo.",
       "model_url": "/models/extended/cold_lact_completo.glb",
       "thumbnailImage": "/models/iced_lathe_imagen.png"
+    },
+
+    {
+      "label": "Vaso de Pepsi",
+      "description": "La clásica Pepsi. Quienes dejan de tomarla lo hacen porque dejan el azúcar o las gaseosas.",
+      "model_url": "/models/vaso_coca.glb",
+      "thumbnailImage": "/models/imagen_pepsi_vintage.png"
+    },
+
+    {
+      "label": "Pinta de Jägermeister",
+      "description": "Licor verde con 35% de alcohol preparado con 56 hierbas.",
+      "model_url": "/models/vaso_verde.glb",
+      "thumbnailImage": "/models/imagen_licor_verde.png"
     }
   ]
 }

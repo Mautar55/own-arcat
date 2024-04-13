@@ -4,7 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 
-import { ResLoader /*, ArcatMaterial*/ } from "../ArcatResources";
+import { ResLoader /*, ArcatMaterial*/ } from "/ArcatResources";
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
@@ -25,9 +25,8 @@ var renderer = new THREE.WebGLRenderer({
   //alpha: true, // no hace falta activar si se usa el fondo de three
   depth: true,
   precision: "highp",
-  toneMapping: THREE.AgXToneMapping,
-  toneMappingExposure: 1,
-  premultipliedAlpha: false
+  toneMapping: THREE.AgXToneMapping, // por alguna razon esdte y el de abajo no cambian
+  toneMappingExposure: 1.0
 });
 renderer.localClippingEnabled = true;
 //renderer.setClearColor(new THREE.Color("black"), 0); // esto se pone si se usa el fondo transparente, pero ahora la textura va en three
@@ -52,6 +51,16 @@ var onRenderFcts = [];
 
 // init scene and camera
 var scene = new THREE.Scene();
+
+await rgbe_loader.load("/models/this_ambient.hdr", (texture_env) => {
+  texture_env.mapping = THREE.EquirectangularReflectionMapping;
+  scene.environment = texture_env;
+  scene.environmentIntensity = 1.5;
+  scene.background = texture_env;
+  scene.backgroundBlurriness = 0.75; //0.75
+  scene.backgroundIntensity = 0.15; //0.15
+});
+
 var arcat_loader = new ResLoader(scene);
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -73,18 +82,6 @@ controls.update();
 
 onRenderFcts.push(() => {
   controls.update();
-});
-
-/////////////////////////////////////////////////////////////////////////////////
-/// Loading HDRI
-/////////////////////////////////////////////////////////////////////////////////
-
-rgbe_loader.load("/models/this_ambient.hdr", (texture_env) => {
-  texture_env.mapping = THREE.EquirectangularReflectionMapping;
-  scene.environment = texture_env;
-  scene.background = texture_env;
-  scene.backgroundBlurriness = 0.75;
-  scene.backgroundIntensity = 0.15;
 });
 
 /////////////////////////////////////////////////////////////////////////////////

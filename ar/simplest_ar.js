@@ -28,9 +28,9 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 
-import { ResLoader /*, ArcatMaterial*/ } from "./ArcatResources";
+import { ResLoader /*, ArcatMaterial*/ } from "/ArcatResources";
 
-ArToolkitContext.baseURL = "./";
+ArToolkitContext.baseURL = "../"; // esta poronga rompe las url dinamicas que trabaja vite!
 
 const loader = new GLTFLoader();
 const DRACOLoaderloader = new DRACOLoader();
@@ -50,8 +50,7 @@ var renderer = new THREE.WebGLRenderer({
   depth: true,
   precision: "highp",
   toneMapping: THREE.AgXToneMapping,
-  toneMappingExposure: 1,
-  premultipliedAlpha: false
+  toneMappingExposure: 1
 });
 renderer.localClippingEnabled = true;
 //renderer.setClearColor(new THREE.Color("black"), 0); // esto se pone si se usa el fondo transparente, pero ahora la textura va en three
@@ -139,8 +138,6 @@ var arToolkitSource = new ArToolkitSource({
   // 854 x 480 es 16:9
   sourceWidth: (window.innerWidth > window.innerHeight) ? 640 : 480,
   sourceHeight: (window.innerWidth > window.innerHeight) ? 480 : 640,
-
-  
   
   displayWidth: window.innerWidth,
   displayHeight: window.innerHeight,

@@ -7,14 +7,15 @@
     "test": "echo \"No test found\"",
     "init": "npx vite --port 80 --host",
     "init-linux": "npx vite --port 5525 --host",
-    "export": "npx vite build && npx vite preview"
+    "export": "npx vite build && npx vite preview",
+    "dist": "npx vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@ar-js-org/ar.js": "^3.4.5",
-    "three": "^0.161.0"
+    "three": "^0.163.0"
   },
   "devDependencies": {
     "vite": "^5.1.4"
