@@ -33,8 +33,6 @@ renderer.localClippingEnabled = true;
 
 const resolution_scaling = 1;
 
-console.log("device pix ratio " + window.devicePixelRatio + " screen width " + window.screen.width);
-
 const wsw = (window.innerWidth) * resolution_scaling;
 const wsh = (window.innerHeight) * resolution_scaling;
 
@@ -128,7 +126,7 @@ window.addEventListener("resize", function () {
 });
 
 function onResize() {
-  arToolkitSource.onResizeElement();
+  //arToolkitSource.onResizeElement();
 
   // esta funcion em altera la relacion de aspecto
   // ver si el px en styles es lo mismo que el absoluto como parte del canvas
