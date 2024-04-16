@@ -28,6 +28,8 @@
 .horizontal-snap > a {
   scroll-snap-align: center;
   border-radius: 1rem;
+  width: 135px;
+  height: 135px;
 }
 
 .horizontal-snap > a:hover {
