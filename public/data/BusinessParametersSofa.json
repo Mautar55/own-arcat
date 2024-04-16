@@ -1,0 +1,53 @@
+{
+  "marker_type": "pattern",
+  "barcodeValue": 5,
+
+  "detectionMode": "mono_and_matrix",
+  "matrixCodeType": "4x4_BCH_13_5_5",
+  "labelingMode": "black_region",
+
+  "highlightColor": "rgb(235, 184, 17)",
+  "products": [
+    {
+      "label": "Cold Brew alternative",
+      "description": "Café servido con hielo. Apto para adictos al café que desconocen el gusto al calor.",
+      "model_url": "/models/extended/cold_brew_completo.glb",
+      "thumbnailImage": "/models/cold_brew.png"
+    },
+
+    {
+      "label": "Cerveza de exportación",
+      "description": "Cerveza artesanal de exportación. Solo se distribuye en bares y la mayoría se va del país.",
+      "model_url": "/models/cerveza_de_exportacion.glb",
+      "thumbnailImage": "/models/imagen_para_cerveza.png"
+    },
+
+    {
+      "label": "Smoothie de banana y frutos rojos",
+      "description": "Exquisito batido de fruta.",
+      "model_url": "/models/extended/batido_frutal_completo.glb",
+      "thumbnailImage": "/models/imagen_batido.png"
+    },
+
+    {
+      "label": "Iced Latte",
+      "description": "Un espresso con leche lateada al punto crema, hielo.",
+      "model_url": "/models/extended/cold_lact_completo.glb",
+      "thumbnailImage": "/models/iced_lathe_imagen.png"
+    },
+
+    {
+      "label": "Vaso de Pepsi",
+      "description": "La clásica Pepsi. Quienes dejan de tomarla lo hacen porque dejan el azúcar o las gaseosas.",
+      "model_url": "/models/vaso_coca.glb",
+      "thumbnailImage": "/models/imagen_pepsi_vintage.png"
+    },
+
+    {
+      "label": "Pinta de Jägermeister",
+      "description": "Licor verde con 35% de alcohol preparado con 56 hierbas.",
+      "model_url": "/models/vaso_verde.glb",
+      "thumbnailImage": "/models/imagen_licor_verde.png"
+    }
+  ]
+}

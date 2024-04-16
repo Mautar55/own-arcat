@@ -15,6 +15,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 ar: resolve(__dirname, 'ar/index.html'),
+                sofa: resolve(__dirname, 'sofa/index.html'),
             },
         },
     },

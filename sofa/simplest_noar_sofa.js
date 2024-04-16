@@ -16,7 +16,7 @@ const rgbe_loader = new RGBELoader();
 
 THREE.Cache.enabled = true;
 
-const some_response = await fetch("/data/BusinessParameters.json");
+const some_response = await fetch("/data/BusinessParametersSofa.json");
 const BusinessParameters = await some_response.json();
 
 // init renderer

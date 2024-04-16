@@ -59,8 +59,8 @@ const resolution_scaling = 1.0;
 
 console.log("device pix ratio " + window.devicePixelRatio + " screen width " + window.screen.width);
 
-const wsw = (window.screen.width * window.devicePixelRatio) * resolution_scaling;
-const wsh = (window.screen.height * window.devicePixelRatio) * resolution_scaling;
+const wsw = (window.innerWidth * window.devicePixelRatio) * resolution_scaling;
+const wsh = (window.innerHeight * window.devicePixelRatio) * resolution_scaling;
 
 renderer.setSize(wsw, wsh);
 renderer.domElement.style.position = "absolute";
