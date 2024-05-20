@@ -1,5 +1,5 @@
 {
-  "marker_type": "pattern",
+  "marker_type": "barcode",
   "barcodeValue": 5,
 
   "detectionMode": "mono_and_matrix",

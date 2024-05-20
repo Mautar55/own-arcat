@@ -3,7 +3,7 @@ let ejemplo_para_json =
     /////
     //MarkerControls
     /////
-    // type of marker - ['pattern', 'barcode', 'unknown' ] - pattern es la imagen con marco, barcode la matriz falopera (el mas liviano).
+    // type of marker - ['pattern', 'barcode', 'unknown' ] - pattern es la imagen con marco, barcode la matriz (el mas liviano).
     // se supone que el radio del pattern sea 0.5 de usarse asi
     marker_type : "barcode",
     // value for the barcode
